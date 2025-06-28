@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fenonirina R. Développeur Embarqué & IoT</title>
+
+    <!-- Tailwind CSS-->
+     <script src="https://cdn.tailwindcss.com"></script>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto+Mono:wght@400;700&display=swap">
+
+     <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body class="text-slate">
+
+    <!-- Left social bar -->
+    <div class="side-element hidden md:flex fixed bottom-0 left-10 z-10">
+        <ul class="flex flex-col items-center space-y-6">
+            <li>
+                <a href="https://github.com/fenonirina" target="_blank" class="text-slate hover:text-green transition-all durable 300 hover:-translate-y-1 block" title="GitHub" aria-label="GitHub">
+                    <img src="images/email1.png" alt="logo github" width="31" height="31">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/fenonirina-rabearimananaharimino-066087305" target="_blank" class="text-slate hover:text-green transition-all duration-300 hover:-translate-y-1 block" title="LinkedIn" aria-label="LinkedIn">
+                    <img src="images/in.png" alt="logo LinkedIn" width="31" height="31">
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Right Email Bar -->
+     <div class="side-email hidden md:flex fixed bottom-0 right-10 z-10">
+        <div class="flex flex-col items-center space-y-6">
+            <a href="mailto:fenonirinak@gmail.com" class="font-mono text-sm writing-mode-vertical-rl text-slate hover:text-green transition-all duration-300 hover:-translate-y-1">
+                <img src="images/email.png" alt="logo email" width="31" height="31">
+            </a>
+        </div>
+     </div>
+
+     <!-- Header -->
+    <header class="glass-nav sticky top-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#navigationbar" class="text-green text-2xl font-mono">Fenonirina R.</a>
+            <div class="hidden md:flex items-center space-x-6 font-mono">
+                <a href="#profil" class="hover:text-green transition-colors">Profil</a>
+                <a href="#parcours" class="hover:text-green transition-colors">Parcours</a>
+                <a href="#projets" class="hover:text-green transition-colors">Projets</a>
+                <a href="#contacts" class="hover:text-green transition-colors">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-green">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu-->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 font-mono text-center">
+            <a href="#profil" class="block py-2 hover:text-green">Profil</a>
+            <a href="#parcours" class="block py-2 hover:text-green">Parcours</a>
+            <a href="#projets" class="block py-2 hover:text-green">Projets</a>
+            <a href="#contact" class="block py-2 hover:text-green">Contacts</a>
+        </div>
+      </header>
+
+      <main class="container mx-auto px-6 py-12">
+
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-[80vh] flex flex-col items-center justify-center text-center my-12 md:my-0">
+            <div class="reveal" style="transition-delay: 100ms;">
+                <div class="relative w-48 h-48 sm:w-56 sm:h-56 group mb-6">
+                    <div class="absolute inset-0 rounded-full bg-green transition-all duration-300 group-hover:translate-x-2 group-hover:translate-y-2"></div>
+                    <img src="images/fenonirina 4x4 .jpeg" alt="Photo de Fenonirina" class="relative w-full h-full object-cover rounded-full z-10 grayscale hover:grayscale-0 transition-all duration-300">
+                </div>
+            </div>
+            <p class="text-green font-mono mb-4 reveal" style="transition-delay: 200ms;">Bonjour, je m'appelle</p>
+            <h1 class="text-2xl font-bold text-lightest-slate mb-8 font-mono" style="transition-delay: 300ms;">Fenonirina Rabearimananaharimino</h1>
+            <h2 class="text-3xl sm:text-5xl md:text-6xl font-bold text-slate reveal" style="transition-delay: 400ms;">Je conçois des solutions embarquées</h2>
+            <p class="mt-6 max-w-xl reveal mx-auto" style="transition-delay: 500ms;">
+               Spécialisé en systèmes embarqués et IoT, je transforme des idées complexes en solutions matérielles et logicielles fonctionnelles. Actuellement étudiant en Électronique et Informatique Industrielle.
+            </p>
+            <div class="mt-12 reveal" style="transition-delay: 600ms;">
+               <a href="mailto:fenonirinak@gamil.com" class="text-green border border-green rounded font-mono py-3 px-8 hover:bg-green/10 transition-all duration-300">Contactez-moi</a>
+            </div>
+        </section>
+
+        <!-- Profil Section -->
+        <section id="profil" class="my-24 scroll-mt-24 reveal">
+            <h2 class="text-2xl font-bold text-lightest-slate mb-8 font-mono">Profil</h2>
+            <div class="space-y-4">
+                <p>Passionné par la convergence du matériel et du logiciel, je me spécialise dans la conception de systèmes embarqués, de la robotique à l'Internet des Objets (IoT). Mon parcours académique et mes projets m'ont permis de développer une expertise solide en programmation de microcontrôleurs (PIC, AVR, ESP) et en création de solutions connectées complètes.</p>
+                <p>Rigoureux et autonome, j'aime résoudre des problèmes complexes et apprendre continuellement. Je suis convaincu que la technologie peut apporter des solutions durables aux défis industriels et environnementaux.</p>
+                 <ul class="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-2 font-mono text-sm mt-4">
+                    <li class="flex items-center"><span class="text-green mr-2">▹</span>C/C++</li>
+                    <li class="flex items-center"><span class="text-green mr-2">▹</span>Python</li>
+                    <li class="flex items-center"><span class="text-green mr-2">▹</span>Java</li>
+                    <li class="flex items-center"><span class="text-green mr-2">▹</span>ESP32/ESP8266</li>
+                    <li class="flex items-center"><span class="text-green mr-2">▹</span>PIC Microcontrollers</li>
+                    <li class="flex items-center"><span class="text-green mr-2">▹</span>ATmega328</li>
+                    <li class="flex items-center"><span class="text-green mr-2">▹</span>Git & GitHub</li>
+                    <li class="flex items-center"><span class="text-green mr-2">▹</span>MySQL / SQLite</li>
+                    <li class="flex items-center"><span class="text-green mr-2">▹</span>IoT & Cloud</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Parcours Section -->
+        <section id="parcours" class="my-24 scroll-mt-24 reveal">
+            <h2 class="text-2xl font-bold text-lightest-slate mb-12 font-mono">Parcours & Certifications</h2>
+             <div class="relative border-l-2 border-gray-700 pl-12 space-y-8">
+                <div class="relative timeline-item p-4 rounded-md -ml-4"><h3 class="text-lg font-bold text-lightest-slate">Responsable Design & Graphique</h3><p class="text-green font-mono text-sm">Association Fianaralab | Sept - Nov 2024</p><p class="mt-2 text-slate">Supervision et création des supports visuels pour l'événement "École d'été PV Fianara 2024".</p></div>
+                <div class="relative timeline-item certif p-4 rounded-md -ml-4"><h3 class="text-lg font-bold text-lightest-slate">Licence en Électronique & Informatique Industrielle</h3><p class="text-green font-mono text-sm">Faculté des Sciences, Fianarantsoa | 2023 - 2025</p></div>
+                <div class="relative timeline-item p-4 rounded-md -ml-4"><h3 class="text-lg font-bold text-lightest-slate">Stage et Formation en Développement</h3><p class="text-green font-mono text-sm">Fihary Soft Ivory, Fianarantsoa | Nov - Déc 2023</p></div>
+                <div class="relative timeline-item p-4 rounded-md -ml-4"><h3 class="text-lg font-bold text-lightest-slate">Stage en Maintenance Électrotechnique</h3><p class="text-green font-mono text-sm">Garage Câble Toliara | Août - Oct 2023</p><p class="mt-2 text-slate">Diagnostics automobiles et maintenance des systèmes électrotechniques.</p></div>
+                <div class="relative timeline-item p-4 rounded-md -ml-4"><h3 class="text-lg font-bold text-lightest-slate">Maintenance et Installation Électricité</h3><p class="text-green font-mono text-sm">Entreprise HMA Toliara | Juillet 2023</p><p class="mt-2 text-slate">Interventions sur des installations électriques de bâtiments.</p></div>
+                <div class="relative timeline-item certif p-4 rounded-md -ml-4"><h3 class="text-lg font-bold text-lightest-slate">Champion de Madagascar - Robotique Technorion 2024</h3><p class="text-green font-mono text-sm">Discipline Mesmerize - Représentant à TechFest, IIT Bombay</p></div>
+                <div class="relative timeline-item certif p-4 rounded-md -ml-4"><h3 class="text-lg font-bold text-lightest-slate">Certification - École d'été PV Fianara</h3><p class="text-green font-mono text-sm">Formation sur la technologie solaire et le développement durable</p></div>
+            </div>
+        </section>
+
+        <!-- Projets Section -->
+        <section id="projets" class="my-24 scroll-mt-24 reveal">
+            <h2 class="text-2xl font-bold text-lightest-slate mb-8 font-mono text-center">Mes Projets</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Projet 1 -->
+                <div class="project-card rounded-md shadow-lg p-6 flex flex-col">
+                    <h3 class="text-xl font-bold text-lightest-slate mb-2">Système de Surveillance IoT</h3>
+                    <p class="text-sm flex-grow">Monitoring temps réel de T°/humidité avec envoi des données vers un Cloud et visualisation sur app web/mobile.</p>
+                    <div class="mt-4 flex flex-wrap gap-2 font-mono text-xs"><span class="bg-green/10 text-green px-2 py-1 rounded">ESP32</span><span class="bg-green/10 text-green px-2 py-1 rounded">C++</span><span class="bg-green/10 text-green px-2 py-1 rounded">Cloud IoT</span></div>
+                    <button data-project-id="1" class="open-modal-button mt-4 text-green font-mono text-sm self-start hover:underline">En savoir plus →</button>
+                </div>
+                <!-- Projet 2 -->
+                <div class="project-card rounded-md shadow-lg p-6 flex flex-col">
+                    <h3 class="text-xl font-bold text-lightest-slate mb-2">Voiture Autonome à Apprentissage</h3>
+                    <p class="text-sm flex-grow">Voiture à base de capteurs IR qui mémorise un parcours puis l'optimise pour trouver le chemin le plus court.</p>
+                    <div class="mt-4 flex flex-wrap gap-2 font-mono text-xs"><span class="bg-green/10 text-green px-2 py-1 rounded">PIC18F</span><span class="bg-green/10 text-green px-2 py-1 rounded">C</span><span class="bg-green/10 text-green px-2 py-1 rounded">Robotique</span></div>
+                    <button data-project-id="2" class="open-modal-button mt-4 text-green font-mono text-sm self-start hover:underline">En savoir plus →</button>
+                </div>
+                 <!-- Projet 3 -->
+                <div class="project-card rounded-md shadow-lg p-6 flex flex-col">
+                    <h3 class="text-xl font-bold text-lightest-slate mb-2">Véhicule Télécommandé</h3>
+                    <p class="text-sm flex-grow">Véhicule piloté via app mobile (Bluetooth/WiFi) avec capteurs à ultrasons pour l'évitement d'obstacles.</p>
+                    <div class="mt-4 flex flex-wrap gap-2 font-mono text-xs"><span class="bg-green/10 text-green px-2 py-1 rounded">ATmega328</span><span class="bg-green/10 text-green px-2 py-1 rounded">Android Studio</span><span class="bg-green/10 text-green px-2 py-1 rounded">Bluetooth</span></div>
+                    <button data-project-id="3" class="open-modal-button mt-4 text-green font-mono text-sm self-start hover:underline">En savoir plus →</button>
+                </div>
+                 <!-- Projet 4 -->
+                 <div class="project-card rounded-md shadow-lg p-6 flex flex-col">
+                    <h3 class="text-xl font-bold text-lightest-slate mb-2">Gestion d'Eau Automatisée</h3>
+                    <p class="text-sm flex-grow">Système de gestion d'eau alimenté par énergie solaire, régulé par des capteurs de conditions physiques.</p>
+                    <div class="mt-4 flex flex-wrap gap-2 font-mono text-xs"><span class="bg-green/10 text-green px-2 py-1 rounded">Solaire</span><span class="bg-green/10 text-green px-2 py-1 rounded">Capteurs</span><span class="bg-green/10 text-green px-2 py-1 rounded">Automatisation</span></div>
+                    <button data-project-id="4" class="open-modal-button mt-4 text-green font-mono text-sm self-start hover:underline">En savoir plus →</button>
+                </div>
+                <!-- Projet 5 -->
+                 <div class="project-card rounded-md shadow-lg p-6 flex flex-col">
+                    <h3 class="text-xl font-bold text-lightest-slate mb-2">Amplificateur Audio Classe A/B</h3>
+                    <p class="text-sm flex-grow">Conception d'un ampli de signal audio, appliquant les principes de l'électronique de puissance sur les transistors.</p>
+                    <div class="mt-4 flex flex-wrap gap-2 font-mono text-xs"><span class="bg-green/10 text-green px-2 py-1 rounded">Électronique</span><span class="bg-green/10 text-green px-2 py-1 rounded">Transistors</span><span class="bg-green/10 text-green px-2 py-1 rounded">Audio</span></div>
+                    <button data-project-id="5" class="open-modal-button mt-4 text-green font-mono text-sm self-start hover:underline">En savoir plus →</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="my-24 scroll-mt-24 text-center reveal">
+            <h2 class="text-4xl font-bold text-lightest-slate mb-4">Entrons en contact</h2>
+            <p class="max-w-xl mx-auto mb-8">
+                Je suis actuellement à la recherche d'opportunités de stage et de projets stimulants. Mon portfolio est ouvert, n'hésitez pas à me contacter si vous avez une question ou si vous souhaitez simplement dire bonjour !
+            </p>
+            <a href="mailto:fenonirinak@gamil.com" class="text-green border border-green rounded font-mono py-3 px-8 hover:bg-green/10 transition-all duration-300">Dites Bonjour</a>
+        </section>
+    </main>
+
+       <!-- Footer -->
+    <footer class="py-8">
+        <div class="container mx-auto px-6 text-center text-slate font-mono text-sm">
+            <div class="flex justify-center items-center space-x-6 mb-4 md:hidden">
+                <a href="https://github.com/fenonirina" target="_blank" class="text-slate hover:text-green transition-colors" title="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                <a href="#" target="_blank" class="text-slate hover:text-green transition-colors" title="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+            </div>
+            <p>Conçu & Développé par Fenonirina Rabearimananaharimino</p>
+            <p class="text-xs mt-1">&copy; 2025</p>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="project-modal" class="modal fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 p-4 hidden opacity-0">
+        <div id="modal-content" class="modal-content bg-light-navy rounded-lg shadow-2xl p-8 max-w-2xl w-full transform scale-95">
+            <div class="flex justify-between items-start">
+                <h3 id="modal-title" class="text-2xl font-bold text-lightest-slate"></h3>
+                <button id="close-modal-button" class="text-slate hover:text-green text-3xl leading-none">&times;</button>
+            </div>
+            <p id="modal-description" class="mt-4 text-slate"></p>
+            <div class="mt-6">
+                <h4 class="font-bold text-light-slate mb-2">Technologies utilisées :</h4>
+                <div id="modal-tech" class="flex flex-wrap gap-2 font-mono text-xs"></div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/scripts.js" ></script>
+</body>
+</html>
