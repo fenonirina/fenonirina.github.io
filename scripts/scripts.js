@@ -24,13 +24,14 @@ openButtons.forEach(button => {
         if (details) {
             modalTitle.textContent = details.title;
             modalDescription.textContent = details.description;
-            modalTech.innerHTML = details.tech.map(t => `<span class="bg-green/10 text-green px-2 py-1 rounded">${t}</span>`).join('');
+            modalTech.innerHTML = details.tech.map(t => `<span class="bg-[#64ffda]/10 text-[#64ffda] px-2.5 py-1 rounded text-xs">${t}</span>`).join('');
             
             modal.classList.remove('hidden');
             setTimeout(() => {
                 modal.classList.remove('opacity-0');
                 modalContent.classList.remove('scale-95');
             }, 10);
+            document.body.classList.add('overflow-hidden'); // Empêche de scroller l'arrière-plan
         }
     });
 });
@@ -40,6 +41,7 @@ const closeModal = () => {
     modalContent.classList.add('scale-95');
     setTimeout(() => {
         modal.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
     }, 250);
 };
 
@@ -50,11 +52,36 @@ modal.addEventListener('click', (event) => {
     }
 });
 
-// --- MOBILE MENU SCRIPT ---
+// --- MOBILE MENU SCRIPT (OVERLAY VERSION) ---
 const mobileMenuButton = document.getElementById('mobile-menu-button');
 const mobileMenu = document.getElementById('mobile-menu');
-mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+const menuIcon = document.getElementById('menu-icon');
+
+mobileMenuButton.addEventListener('click', () => {
+    const isHidden = mobileMenu.classList.contains('hidden');
+    if (isHidden) {
+        mobileMenu.classList.remove('hidden');
+        mobileMenu.classList.add('flex');
+        document.body.classList.add('overflow-hidden');
+        // Icône de fermeture (X)
+        menuIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>`;
+    } else {
+        closeMenu();
+    }
+});
+
+function closeMenu() {
+    mobileMenu.classList.add('hidden');
+    mobileMenu.classList.remove('flex');
+    document.body.classList.remove('overflow-hidden');
+    // Icône Menu Burger originale
+    menuIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>`;
+}
+
+// Fermeture quand on clique sur un lien du menu mobile
+document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', closeMenu);
+});
 
 // --- SCROLL ANIMATION SCRIPT ---
 const observer = new IntersectionObserver((entries) => {
@@ -63,5 +90,5 @@ const observer = new IntersectionObserver((entries) => {
             entry.target.classList.add('visible');
         }
     });
-}, { threshold: 0.1 });
+}, { threshold: 0.05 }); // Se déclenche un peu plus tôt sur mobile pour une meilleure fluidité
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));

@@ -1,7 +1,7 @@
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #0a192f; /* Dark Navy */
-    color: #ccd6f6; /* Light Slate */
+    color: #8892b0; /* Slate */
 }
 .font-mono {
     font-family: 'Roboto Mono', monospace;
@@ -19,6 +19,7 @@ body {
 .glass-nav {
     background-color: rgba(10, 25, 47, 0.85);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
 }
 
@@ -28,15 +29,15 @@ body {
     transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
 }
 .project-card:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 30px -15px rgba(2,12,27,0.7);
 }
 
 /* Scroll Animation */
 .reveal {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transform: translateY(20px);
+    transition: opacity 0.6s cubic-bezier(0.645,0.045,0.355,1), transform 0.6s cubic-bezier(0.645,0.045,0.355,1);
 }
 .reveal.visible {
     opacity: 1;
@@ -45,24 +46,54 @@ body {
 
 /* Timeline Styling */
 .timeline-item {
+    position: relative;
+    padding-left: 4px;
+}
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -32px;
+    top: 6px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background-color: #0a192f;
+    border: 2px solid #64ffda;
+    z-index: 2;
+    transition: all 0.2s ease;
+}
+/* Timeline Styling */
+.timeline-item {
+    position: relative; /* Indispensable pour lier le cercle à cet élément */
     transition: background-color 0.3s ease;
 }
 .timeline-item:hover {
     background-color: #112240; /* Light navy on hover */
 }
+
 .timeline-item::before {
     content: '';
     position: absolute;
-    left: -31px;
-    top: 4px;
-    width: 22px;
-    height: 22px;
+    
+    /* ÉTAPE 1 : On place le bord gauche du cercle pile sur la ligne gauche du parent */
+    left: 0; 
+    
+    /* ÉTAPE 2 : On recule le cercle de la moitié de sa propre largeur pour centrer son axe */
+    transform: translateX(-50%); 
+    
+    top: 20px; /* Ajustez cette valeur pour caler le cercle à la hauteur de la première ligne de texte */
+    width: 16px; /* Taille légèrement réduite pour un rendu plus fin et professionnel */
+    height: 16px;
     border-radius: 50%;
-    background-color: #112240;
+    background-color: #0a192f; /* Fond sombre pour masquer la ligne derrière le cercle */
     border: 3px solid #64ffda;
+    z-index: 2; /* Force le cercle à passer DEVANT la ligne verticale */
 }
 .timeline-item.certif::before {
     border-color: #8892b0;
+}
+.timeline-item:hover::before {
+    background-color: #64ffda;
 }
 
 /* Modal Styling */
@@ -73,20 +104,21 @@ body {
     transition: transform 0.25s ease;
 }
 
-/* Side Elements Styling */
-.side-element ul::after {
-    content: "";
-    display: block;
-    width: 1px;
-    height: 90px;
-    margin: 0px auto;
-    background-color: #8892b0; /* slate */
+/* Vertical text compatibility modern */
+.writing-mode-vertical {
+    writing-mode: vertical-rl;
+    -webkit-writing-mode: vertical-rl;
 }
-.side-email a::after {
+
+/* Side Elements Line Styling */
+.side-element ul::after, .side-email::after {
     content: "";
     display: block;
     width: 1px;
     height: 90px;
     margin: 0px auto;
-    background-color: #8892b0; /* slate */
+    background-color: #8892b0;
+}
+.side-email::after {
+    margin-top: 15px;
 }
